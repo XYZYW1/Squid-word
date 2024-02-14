@@ -119,7 +119,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.7,
+      1.5,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -132,7 +132,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5 span",
-      0.7,
+      1.5,
       {
         rotation: 90,
         x: 8,
@@ -141,7 +141,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5",
-      0.7,
+      1.5,
       {
         scale: 0.2,
         opacity: 0,
