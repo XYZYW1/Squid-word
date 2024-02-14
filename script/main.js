@@ -1,4 +1,4 @@
-// Animation Timeline
+// Animation Timeline up to "Will you be my valentine?" button
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
@@ -26,12 +26,12 @@ const animationTimeline = () => {
     skewX: "-15deg",
   };
 
-  const tl = new TimelineMax();
+  const tl1 = new TimelineMax();
 
-  tl.to(".container", 0.1, {
+  tl1.to(".container", 0.1, {
     visibility: "visible",
   })
-    .from(".one", 0.7, {
+    .from(".one", 0.1, {//0.7, {
       opacity: 0,
       y: 10,
     })
@@ -41,7 +41,7 @@ const animationTimeline = () => {
     })
     .to(
       ".one",
-      0.7,
+      0.1,//0.7,
       {
         opacity: 0,
         y: 10,
@@ -50,38 +50,38 @@ const animationTimeline = () => {
     )
     .to(
       ".two",
-      0.7,
+      0.1,//0.7,
       {
         opacity: 0,
         y: 10,
       },
       "-=1"
     )
-    .from(".three", 0.7, {
+    .from(".three", 0.1, {//0.7, {
       opacity: 0,
       y: 10,
       // scale: 0.7
     })
     .to(
       ".three",
-      0.7,
+      0.1,//0.7,
       {
         opacity: 0,
         y: 10,
       },
       "+=2"
     )
-    .from(".four", 0.7, {
+    .from(".four", 0.1, {//0.7, {
       scale: 0.2,
       opacity: 0,
     })
-    .from(".fake-btn", 0.3, {
+    .from(".fake-btn", 0.1, {//0.3, {
       scale: 0.2,
       opacity: 0,
     })
     .staggerTo(
       ".hbd-chatbox span",
-      0.5,
+      0.1,//0.5,
       {
         visibility: "visible",
       },
@@ -92,7 +92,7 @@ const animationTimeline = () => {
     })
     .to(
       ".four",
-      0.5,
+      0.1,//0.5,
       {
         scale: 0.2,
         opacity: 0,
@@ -105,7 +105,8 @@ const animationTimeline = () => {
     .from(".idea-2", 0.7, ideaTextTrans)
     .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-3", 0.7, ideaTextTrans)
-    .to(".idea-3 strong", 0.5, {
+    .to(".idea-3 strong", 0.1,//0.5, 
+    {
       scale: 1.2,
       x: 10,
       backgroundColor: "rgb(21, 161, 237)",
@@ -116,7 +117,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.7,
+      0.1,//0.7,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -129,7 +130,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5 span",
-      0.7,
+      0.1,//0.7,
       {
         rotation: 90,
         x: 8,
@@ -138,7 +139,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5",
-      0.7,
+      0.1,//0.7,
       {
         scale: 0.2,
         opacity: 0,
@@ -147,7 +148,7 @@ const animationTimeline = () => {
     )
     .staggerFrom(
       ".idea-6 span",
-      0.8,
+      0.1,//0.8,
       {
         scale: 3,
         opacity: 0,
@@ -158,7 +159,7 @@ const animationTimeline = () => {
     )
     .staggerTo(
       ".idea-6 span",
-      0.8,
+      0.1,//0.8,
       {
         scale: 3,
         opacity: 0,
@@ -170,7 +171,7 @@ const animationTimeline = () => {
     )
     .staggerFromTo(
       ".baloons img",
-      2.5,
+      0.1,//2.5,
       {
         opacity: 0.9,
         y: 1400,
@@ -183,7 +184,7 @@ const animationTimeline = () => {
     )
     .from(
       ".girl-dp",
-      0.5,
+      0.1,//0.5,
       {
         scale: 3.5,
         opacity: 0,
@@ -193,7 +194,7 @@ const animationTimeline = () => {
       },
       "-=2"
     )
-    .from(".hat", 0.5, {
+    .from(".hat", 0.1, {//0.5, {
       x: -100,
       y: 350,
       rotation: -180,
@@ -201,7 +202,7 @@ const animationTimeline = () => {
     })
     .staggerFrom(
       ".wish-hbd span",
-      0.7,
+      0.1,//0.7,
       {
         opacity: 0,
         y: -50,
@@ -211,8 +212,7 @@ const animationTimeline = () => {
         ease: Elastic.easeOut.config(1, 0.5),
       },
       0.1
-    )
-    .staggerFromTo(
+    ).staggerFromTo(
       ".wish-hbd span",
       0.7,
       {
@@ -237,8 +237,84 @@ const animationTimeline = () => {
         skewX: "-15deg",
       },
       "party"
-    )
-    .staggerTo(
+    ).staggerFromTo(
+      "#yes_btn",
+      0.2,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+      },
+      0.1
+    ).staggerFromTo(
+      "#no_btn",
+      0.2,
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+      },
+      0.1
+    );
+    
+    var noCount = 0;
+
+    // TODO: implement yes/no buttons
+    const yesBtn = document.getElementById("yes_btn");
+    yesBtn.addEventListener("click", () => {
+      animationTimeline2();
+      yesBtn.addEventListener("click", () => {});
+      noBtnBtn.addEventListener("click", () => {});
+    });
+
+    const getNoButtonText = (noCount) => {
+      const phrases = [
+        "No",
+        "Are you sure?",
+        "What if I asked really nicely?",
+        "Pretty please",
+        "With a chocolate rice cake on top",
+        "What about a matcha frostie",
+        "PLEASE POOKIE",
+        "But :*(",
+        "I am going to die",
+        "Yep im dead",
+        "ok ur talking to ethan's ghost",
+        "please babe",
+        ":((((",
+        "PRETTY PLEASE",
+        "Estoy muerto",
+        "No :(",
+      ];
+  
+      return phrases[Math.min(noCount, phrases.length - 1)];
+    };
+    const noBtn = document.getElementById("no_btn");
+    noBtn.addEventListener("click", () => {
+      noCount++;
+      noBtn.innerHTML = getNoButtonText(noCount);
+      yesBtn.style.fontSize = (noCount * 20 + 16).toString()+"px";
+      console.log(noCount * 20 + 16)
+      console.log(yesBtn.style.fontSize)
+    });
+};
+
+const animationTimeline2 = () => {
+  // Add elements to HTML
+
+  const ideaTextTrans = {
+    opacity: 0,
+    y: -20,
+    rotationX: 5,
+    skewX: "15deg",
+  };
+
+  const tl2 = new TimelineMax();
+  tl2.to(".container", 0.1, {
+    visibility: "visible",
+  }).staggerTo(  // fireworks
       ".eight svg",
       1.5,
       {
@@ -250,12 +326,16 @@ const animationTimeline = () => {
       },
       0.3
     )
-    .to(".six", 0.5, {
+    .to(".six", 0.5, {  // make that stuff disappear
       opacity: 0,
       y: 30,
       zIndex: "-1",
     })
-    .staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+    .to(
+      ".nine", 0.1, {
+        visibility: "visible",
+      }
+    ).staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
     .to(
       ".last-smile",
       0.5,
@@ -265,41 +345,72 @@ const animationTimeline = () => {
       "+=1"
     );
 
-  // tl.seek("currentStep");
-  // tl.timeScale(2);
 
   // Restart Animation on click
-  const replyBtn = document.getElementById("replay");
-  replyBtn.addEventListener("click", () => {
-    tl.restart();
+  const replayBtn = document.getElementById("replay");
+  replayBtn.addEventListener("click", () => {
+    document.getElementsByClassName("nine")[0].style.visibility = "hidden";
+    //animationTimeline();  TODO: goofed up, recursion solution doesn't work, lags out computer
   });
 };
 
-// Import the data to customize and insert them into page
-const fetchData = () => {
-  fetch("customize.json")
-    .then((data) => data.json())
-    .then((data) => {
-      Object.keys(data).map((customData) => {
-        if (data[customData] !== "") {
-          if (customData === "imagePath") {
-            document
-              .getElementById(customData)
-              .setAttribute("src", data[customData]);
-          } else {
-            document.getElementById(customData).innerText = data[customData];
-          }
+
+animationTimeline();
+
+
+// cuz my man like the funky background
+var canvas = document.getElementById("starfield");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var context = canvas.getContext("2d");
+var stars = 500;
+var colorrange = [0, 60, 240];
+var starArray = [];
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Initialize stars with random opacity values
+for (var i = 0; i < stars; i++) {
+    var x = Math.random() * canvas.offsetWidth;
+    var y = Math.random() * canvas.offsetHeight;
+    var radius = Math.random() * 1.2;
+    var hue = colorrange[getRandom(0, colorrange.length - 1)];
+    var sat = getRandom(50, 100);
+    var opacity = Math.random();
+    starArray.push({ x, y, radius, hue, sat, opacity });
+}
+
+var baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+
+function drawStars() {
+    for (var i = 0; i < stars; i++) {
+        var star = starArray[i];
+
+        context.beginPath();
+        context.arc(star.x, star.y, star.radius, 0, 360);
+        context.fillStyle = "hsla(" + star.hue + ", " + star.sat + "%, 88%, " + star.opacity + ")";
+        context.fill();
+    }
+}
+
+function updateStars() {
+    for (var i = 0; i < stars; i++) {
+        if (Math.random() > 0.99) {
+            starArray[i].opacity = Math.random();
         }
-      });
-    });
-};
+    }
+}
 
-// Run fetch and animation in sequence
-const resolveFetch = () => {
-  return new Promise((resolve, reject) => {
-    fetchData();
-    resolve("Fetch done!");
-  });
-};
+function draw() {
+    context.putImageData(baseFrame, 0, 0);
 
-resolveFetch().then(animationTimeline());
+    drawStars();
+    updateStars();
+
+    window.requestAnimationFrame(draw);
+}
+
+window.requestAnimationFrame(draw);
