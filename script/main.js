@@ -274,20 +274,21 @@ const animationTimeline = () => {
     const getNoButtonText = (noCount) => {
       const phrases = [
         "No",
-        "Are you sure?",
+        "No you didn't.",
+        "Why are you clicking no!",
         "What if I asked really nicely?",
         "Pretty please",
-        "With a chocolate rice cake on top",
-        "What about a matcha frostie",
-        "PLEASE POOKIE",
-        "But :*(",
+        "Pretty please with Rocky Mountain ice cream and a cherry on top?",
+        "Ok how about  Pistachio ice cream with a cherry on top?",
+        "PLEASE BABY WTH",
+        "But :(",
         "I am going to die",
         "Yep im dead",
         "ok ur talking to ethan's ghost",
         "please babe",
         ":((((",
         "PRETTY PLEASE",
-        "Estoy muerto",
+        "S'il vous plaît",
         "No :(",
       ];
   
