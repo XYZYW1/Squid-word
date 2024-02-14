@@ -31,7 +31,7 @@ const animationTimeline = () => {
   tl1.to(".container", 0.1, {
     visibility: "visible",
   })
-    .from(".one", 0.1, {//0.7, {
+    .from(".one", 0.7, {
       opacity: 0,
       y: 10,
     })
@@ -41,7 +41,7 @@ const animationTimeline = () => {
     })
     .to(
       ".one",
-      0.1,//0.7,
+      0.7,
       {
         opacity: 0,
         y: 10,
@@ -50,38 +50,37 @@ const animationTimeline = () => {
     )
     .to(
       ".two",
-      0.1,//0.7,
+      0.7,
       {
         opacity: 0,
         y: 10,
       },
       "-=1"
     )
-    .from(".three", 0.1, {//0.7, {
+    .from(".three", 0.7, {
       opacity: 0,
       y: 10,
-      // scale: 0.7
     })
     .to(
       ".three",
-      0.1,//0.7,
+      0.7,
       {
         opacity: 0,
         y: 10,
       },
       "+=2"
     )
-    .from(".four", 0.1, {//0.7, {
+    .from(".four", 0.7, {
       scale: 0.2,
       opacity: 0,
     })
-    .from(".fake-btn", 0.1, {//0.3, {
+    .from(".fake-btn", 0.3, {
       scale: 0.2,
       opacity: 0,
     })
     .staggerTo(
       ".hbd-chatbox span",
-      0.1,//0.5,
+      0.5,
       {
         visibility: "visible",
       },
@@ -92,7 +91,7 @@ const animationTimeline = () => {
     })
     .to(
       ".four",
-      0.1,//0.5,
+      0.5,
       {
         scale: 0.2,
         opacity: 0,
@@ -105,7 +104,7 @@ const animationTimeline = () => {
     .from(".idea-2", 0.7, ideaTextTrans)
     .to(".idea-2", 0.7, ideaTextTransLeave, "+=1.5")
     .from(".idea-3", 0.7, ideaTextTrans)
-    .to(".idea-3 strong", 0.1,//0.5, 
+    .to(".idea-3 strong", 0.5, 
     {
       scale: 1.2,
       x: 10,
@@ -117,7 +116,7 @@ const animationTimeline = () => {
     .to(".idea-4", 0.7, ideaTextTransLeave, "+=1.5")
     .from(
       ".idea-5",
-      0.1,//0.7,
+      0.7,
       {
         rotationX: 15,
         rotationZ: -10,
@@ -130,7 +129,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5 span",
-      0.1,//0.7,
+      0.7,
       {
         rotation: 90,
         x: 8,
@@ -139,7 +138,7 @@ const animationTimeline = () => {
     )
     .to(
       ".idea-5",
-      0.1,//0.7,
+      0.7,
       {
         scale: 0.2,
         opacity: 0,
@@ -148,7 +147,7 @@ const animationTimeline = () => {
     )
     .staggerFrom(
       ".idea-6 span",
-      0.1,//0.8,
+      0.8,
       {
         scale: 3,
         opacity: 0,
@@ -159,7 +158,7 @@ const animationTimeline = () => {
     )
     .staggerTo(
       ".idea-6 span",
-      0.1,//0.8,
+      0.8,
       {
         scale: 3,
         opacity: 0,
@@ -171,7 +170,7 @@ const animationTimeline = () => {
     )
     .staggerFromTo(
       ".baloons img",
-      0.1,//2.5,
+      2.5,
       {
         opacity: 0.9,
         y: 1400,
@@ -184,7 +183,7 @@ const animationTimeline = () => {
     )
     .from(
       ".girl-dp",
-      0.1,//0.5,
+      0.5,
       {
         scale: 3.5,
         opacity: 0,
@@ -194,7 +193,7 @@ const animationTimeline = () => {
       },
       "-=2"
     )
-    .from(".hat", 0.1, {//0.5, {
+    .from(".hat", 0.5, {
       x: -100,
       y: 350,
       rotation: -180,
@@ -202,11 +201,10 @@ const animationTimeline = () => {
     })
     .staggerFrom(
       ".wish-hbd span",
-      0.1,//0.7,
+      0.7,
       {
         opacity: 0,
         y: -50,
-        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5),
@@ -261,9 +259,10 @@ const animationTimeline = () => {
     
     var noCount = 0;
 
-    // TODO: implement yes/no buttons
+    // yes/no buttons
     const yesBtn = document.getElementById("yes_btn");
     yesBtn.addEventListener("click", () => {
+      document.getElementById("imagePath").src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
       animationTimeline2();
       yesBtn.addEventListener("click", () => {});
       noBtnBtn.addEventListener("click", () => {});
@@ -351,6 +350,7 @@ const animationTimeline2 = () => {
   replayBtn.addEventListener("click", () => {
     document.getElementsByClassName("nine")[0].style.visibility = "hidden";
     //animationTimeline();  TODO: goofed up, recursion solution doesn't work, lags out computer
+    location.reload();
   });
 };
 
