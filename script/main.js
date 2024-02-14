@@ -8,9 +8,12 @@ const animationTimeline = () => {
     .split("")
     .join("</span><span>")}</span`;
 
-  hbd.innerHTML = `<span>${hbd.innerHTML
-    .split("")
-    .join("</span><span>")}</span`;
+  var wouldbe = '';
+  for (const c of hbd.innerHTML.split("")) {
+    if(c != ' ') wouldbe += '<span id="nonspace" style="color: white">'+ c +'</span>';
+    else wouldbe += '<span style="color: black">-<span>';
+  }
+  hbd.innerHTML = wouldbe;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -211,7 +214,7 @@ const animationTimeline = () => {
       },
       0.1
     ).staggerFromTo(
-      ".wish-hbd span",
+      ".wish-hbd span#nonspace",
       0.7,
       {
         scale: 1.4,
