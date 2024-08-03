@@ -17,6 +17,72 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/faahim/happy-birthday.git"
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Repository and Music</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .audio-controls {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>GitHub Repository Information</h1>
+      <div class="repo-info">
+        <h2>Repository Details</h2>
+        <p><strong>Repository Name:</strong> <a href="https://github.com/faahim/happy-birthday" target="_blank">happy-birthday</a></p>
+        <p><strong>Description:</strong> A special birthday message for someone dear.</p>
+        <p><strong>URL:</strong> <a href="https://github.com/faahim/happy-birthday" target="_blank">https://github.com/faahim/happy-birthday</a></p>
+        <p><strong>Type:</strong> Git repository</p>
+        <p><strong>Clone URL:</strong> <a href="git+https://github.com/faahim/happy-birthday.git">git+https://github.com/faahim/happy-birthday.git</a></p>
+      </div>
+
+      <div class="audio-controls">
+        <h2>Background Music</h2>
+        <audio id="background-audio" src="song/near-you.mp3" autoplay controls>
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+      </div>
+    </div>
+  </body>
+</html>
+
+    
+    
   },
   "keywords": [
     "Happy",
